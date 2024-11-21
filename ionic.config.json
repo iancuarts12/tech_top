@@ -1,0 +1,7 @@
+{
+  "name": "tech_top",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
