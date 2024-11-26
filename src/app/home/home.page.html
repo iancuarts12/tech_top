@@ -1,24 +1,28 @@
-<ion-header [translucent]="true">
-
 <ion-content [fullscreen]="true">
-
   <nav class="nav-bar">
     <div class="tech-top">
-      <P>TECH TOP</P>
+      <P><a href="">TECH<span>TOP</span></a></P>
     </div>
-
     <div class="nav-items">
       <ul>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#cart">Cart</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="router-link-active" >ABOUT US</a></li>
+        <li><a href="#cart">CART</a></li>
       </ul>
     </div>
   </nav>
 
+  <div id="body">
   <div id="container">
-    <strong>Testing The Server</strong>
-    <p>A Page for TECH TOP</p>
+
+  <div class="banner">
+    <img src="/assets/TECH_TOP_ICON.png">
+    <p>GADGET WITHIN A BUDGET?</p>
+    <strong>WE GOT IT HERE.</strong>
+    </div>
+
+    <ion-button><a href="#products">Shop Now</a></ion-button>
+  </div>
   </div>
 
 </ion-content>
