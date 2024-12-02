@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ProductGeneralPage } from './product-general/product-general.page';
+import { AboutPage } from './about/about.page';
 
 const routes: Routes = [
   {
@@ -18,6 +20,14 @@ const routes: Routes = [
   {
     path: 'product-general',
     loadChildren: () => import('./product-general/product-general.module').then( m => m.ProductGeneralPageModule)
+  },
+  {
+    path: 'product-laptop',
+    loadChildren: () => import('./product-laptop/product-laptop.module').then( m => m.ProductLaptopPageModule)
+  },
+  {
+    path: 'product-pc',
+    loadChildren: () => import('./product-pc/product-pc.module').then( m => m.ProductPcPageModule)
   },
 ];
 

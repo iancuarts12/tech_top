@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>product_general</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen] = "true">
+<nav class="nav-bar">
+  <div class="tech-top">
+    <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">product_general</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="nav-items">
+    <ul>
+      <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
+      <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
+      <li><a href="#cart">CART</a></li>
+    </ul>
+  </div>
+</nav>
+<app-phone-nav></app-phone-nav>
+
+<!--Main Contents Below-->
+<div class = "background">
+<div class="banner">
+  <h1>PRODUCTS</h1>
+</div>
+
+<div class="main">
+  <div class="box box1">
+    <h2 class="product-title"><a [routerLink]="['../product-laptop']" routerLinkActive="router-link-active">LAPTOPS</a></h2>
+  </div>
+  <div class="box box2">
+    <h2><a [routerLink]="['../product-pc']" routerLinkActive="router-link-active">PC</a></h2>
+  </div>
+  <div class="box box3">
+    <h2><a href="">CONSOLES</a></h2>
+  </div>
+  <div class="box box4">
+    <h2><a href="">PERIPHERALS</a></h2>
+  </div>
+  <div class="box box5">
+    <h2><a href="">MOBILE DEVICES</a></h2>
+  </div>
+  <div class="box box6">
+    <h2><a href="">SMART DEVICES</a></h2>
+  </div>
+</div>
+</div>
+
 </ion-content>

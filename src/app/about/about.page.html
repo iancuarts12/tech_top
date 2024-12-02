@@ -1,15 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>about</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
-  <P>HELLLO</P>
+<ion-content [fullscreen]="true">
+
+<nav class="nav-bar">
+  <div class="tech-top">
+    <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+  </div>
+
+  <div class="nav-items">
+    <ul>
+      <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
+      <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
+      <li><a href="#cart">CART</a></li>
+    </ul>
+  </div>
+</nav>
+<app-phone-nav></app-phone-nav>
+
+<!--Main Contents Below-->
+
+
 </ion-content>

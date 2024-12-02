@@ -1,0 +1,324 @@
+<ion-content [fullscreen] = "true">
+  <nav class="nav-bar">
+    <div class="tech-top">
+      <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+    </div>
+
+    <div class="nav-items">
+      <ul>
+        <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
+        <li><a href="#cart">CART</a></li>
+      </ul>
+    </div>
+  </nav>
+  <app-phone-nav></app-phone-nav>
+
+  <!-- Main Content Below-->
+
+  <div class="image-panel">
+    <div class="overlay"></div>
+    <p class="title">PRODUCTS</p>
+  </div>
+  <div class="content">
+    <div class="products-nav">
+      <div class="mobile-product-nav">
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="selectedProduct" aria-label="SELECT PRODUCT" interface="modal" placeholder="SELECT PRODUCT" (ionChange)="navigate($event)">
+            <ion-select-option value="laptops">LAPTOPS</ion-select-option>
+            <ion-select-option value="pc">PC</ion-select-option>
+            <ion-select-option value="consoles">CONSOLES</ion-select-option>
+            <ion-select-option value="peripherals">PERIPHERALS</ion-select-option>
+            <ion-select-option value="mobile-devices">MOBILE DEVICES</ion-select-option>
+            <ion-select-option value="smart-devices">SMART DEVICES</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+      <div class="product-tab">LAPTOPS</div>
+      <div class="product-tab active">PC</div>
+      <div class="product-tab">CONSOLES</div>
+      <div class="product-tab">PERIPHERALS</div>
+      <div class="product-tab">MOBILE DEVICES</div>
+      <div class="product-tab">SMART DEVICES</div>
+    </div>
+
+  <div class="products-panels">
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc1.jpg" alt="Cyborg Ryzen 5">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">CYBORG RYZEN 5 </span>
+          <span class="product-price">₱60,599</span>
+        </div>
+        <div class="brand">AMD</div>
+        <ul class="specs">
+          <li>Ryzen 5 5600 G</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc2.jpg" alt="Ice White Ryzen 6">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">ICE WHITE RYZEN 6</span>
+          <span class="product-price">₱55,999</span>
+        </div>
+        <div class="brand">AMD</div>
+        <ul class="specs">
+          <li>Ryzen 5 5600 G</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc3.jpg" alt="NZXT Ryzen 5">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">NZXT Ryzen 5</span>
+          <span class="product-price">₱55,999</span>
+        </div>
+        <div class="brand">AMD</div>
+        <ul class="specs">
+          <li>Ryzen 5 5600X | MSI RTX 1080 Ti</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc4.jpg" alt="Acer White Box">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">ACER WHITE BOX</span>
+          <span class="product-price">₱69,899</span>
+        </div>
+        <div class="brand">ACER</div>
+        <ul class="specs">
+          <li>Ryzen 7 5700 G | GeForce RTX 1080 Ti</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc5.jpg" alt="HYTE Y70">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">HYTE Y70</span>
+          <span class="product-price">₱119,999</span>
+        </div>
+        <div class="brand">HEXA</div>
+        <ul class="specs">
+          <li>GeForce RTX 4070 Ti</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc6.jpg" alt="Alpha Aurus Asus">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">ALPHA AURUS ASUS</span>
+          <span class="product-price">₱89,599</span>
+        </div>
+        <div class="brand">TUF</div>
+        <ul class="specs">
+          <li>Ryzen 7 5700 X | GeForce RTX 5060 Ti.</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc7.jpg" alt="Crystal Corrustion">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">CRYSTAL CORRUSTION</span>
+          <span class="product-price">₱49,999</span>
+        </div>
+        <div class="brand">CORSAIR</div>
+        <ul class="specs">
+          <li>Ryzen 5 5600 G | GeForce RTX 1080 Ti</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/pc8.jpg" alt="Acer TUF Purple G">
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">ACER TUF PURPLE G</span>
+          <span class="product-price">₱49,999</span>
+        </div>
+        <div class="brand">ACER</div>
+        <ul class="specs">
+          <li>Ryzen 7 5700 G | MSI RTX 1080 Ti</li>
+          <li>16GB DDR4 Memory</li>
+          <li>512GB NVMe SSD</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a href="" target="_blank" class="more-info">MORE INFO</a>
+          </div>
+          <ion-button size="small">
+            ADD TO CART
+            <ion-icon name="cart" class="cart-icon"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</ion-content>

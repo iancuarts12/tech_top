@@ -1,0 +1,321 @@
+html{
+  overflow-y: hidden !important;
+
+}
+
+.image-panel{
+  background-color: yellow;
+  background-image: url('/assets/products/background.png');
+  background-size: cover;
+  background-position: center;
+  height: 19vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+ion-content{
+  --background: #EFEFEF;
+}
+
+
+.title{
+  font-size: 5em;
+  font-family: Inria Sans;
+  font-weight: bold;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+
+}
+
+
+.content{
+  background: #EFEFEF;
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 7.5px rgba(0, 0, 0, 0.288);
+
+
+}
+
+.products-nav{
+  background: #EFEFEF;
+  width: 100%;
+  box-shadow: 0px 0px 7.5px black;
+  color: black;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inria Sans;
+
+}
+
+
+
+
+.product-tab{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+}
+
+
+.product-tab:hover, .active{
+  background-color: #dadada;
+  height: 100%;
+  cursor: pointer;
+  font-weight: 1000;
+}
+
+
+
+
+.products-panels{
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-content: start;
+  margin-top: 1em;
+  height: 100%;
+  flex-wrap: wrap;
+  overflow:auto;
+  gap: 20px;
+
+
+
+}
+
+
+
+ion-icon{
+  color: #FFBD59;
+}
+
+
+.reviews-checkout{
+  display: flex;
+}
+
+
+.product-card {
+  width: 300px;
+  height: 19em;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Inria Sans;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product-image{
+  background-color: white;
+}
+
+.product-description {
+  padding: 10px;
+  background: #ececec;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1em;
+  color: black;
+}
+
+.product-price {
+  color: black;
+
+}
+
+.brand {
+  font-size: 14px;
+  color: black;
+  margin: 0;
+}
+
+.specs {
+
+  padding: 0 1em;
+  margin: 5px 0 10px;
+}
+
+.specs li {
+  font-size: 13px;
+  color: #555;
+}
+
+.reviews-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reviews-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 14px;
+}
+
+.more-info {
+  font-size: 13px;
+  color: #FFBD59;
+  text-decoration: none;
+
+}
+
+.more-info:hover {
+  text-decoration: underline;
+}
+
+ion-button{
+  --background: #FFBD59;
+  color: white;
+  font-family: Inria Sans;
+}
+
+ion-button ion-icon{
+  color: white;
+  margin-left: 1em;
+}
+
+.mobile-product-nav {
+  display: none;
+  flex: 1;
+  align-items: center;
+}
+
+ion-list {
+  height: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+ion-modal{
+  --background: #EFEFEF;
+  --color: black;
+}
+
+ion-item{
+  --background: #EFEFEF;
+}
+
+ion-select-option{
+  --background: #EFEFEF;
+  --color: black;
+}
+
+ion-select {
+
+  &::part(text), &::part(icon), &::part(label), &::part(placeholder) {
+      margin-bottom: 1em;
+      color: black;
+  }
+
+  font-family: Inria Sans;
+
+
+}
+
+ion-select {
+  &::part(option), &::part(select-popover)  {
+      color: black;
+  }
+
+  font-family: Inria Sans;
+
+
+}
+
+ion-select-option{
+  font-family: Inria Sans;
+}
+
+
+
+@media (max-width: 960px) {
+  .product-card{
+    flex-direction: row;
+    width: 600px;
+    z-index: 5;
+    height: 10em;
+  }
+
+  .products-panels{
+    width: 90vw;
+}
+
+.product-image {
+  width: 40%;
+  height: 100%;
+
+}
+
+.product-description{
+  width: 60%;
+}
+}
+
+@media (max-width: 465px){
+  ion-icon[name="cart"] {
+    display: none;
+  }
+}
+
+@media (max-width: 670px){
+  .product-tab{
+    display: none;
+
+  }
+
+  .nav-items{
+    display: none;
+  }
+
+  .mobile-product-nav {
+    display: flex;
+  }
+
+}
+
+
+
+
+
+

@@ -1,0 +1,191 @@
+.background{
+  background-color: white ;
+}
+// -------------------------BANNER--------------
+.banner {
+  background-color: #eca02d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12em;
+  box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+  background-image: url('/assets/gen-product-img/banner.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.banner h1 {
+  color: aqua;
+  font-size: 90px;
+  margin-left: 5px;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: Bolder;
+
+}
+
+// ------------------MAIN PRODUCTS ---------------
+
+.main {
+  padding: 0;
+  margin-top: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  display: grid;
+  grid-template-areas:
+      "box1 box2 box3"
+      "box4 box5 box6"
+  ;
+
+  .box {
+      box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50)
+  }
+
+  .box:nth-child(1) {
+      background-color: #FFBD59;
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: black;
+
+      background-image: url('/assets/gen-product-img/Laptop.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(1) h2 a {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: white;
+  }
+
+  .box:nth-child(2) {
+      background-color: #FFBD59;
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('/assets/gen-product-img/PC.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(2) h2 a {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: white;
+  }
+
+  .box:nth-child(3) {
+      background-color: #FFBD59;
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('/assets/gen-product-img/console.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(3) h2 a {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: white;
+  }
+
+  .box:nth-child(4) {
+      background-color: #FFBD59;
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('/assets/gen-product-img/peripherals.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(4) h2 a {
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+  }
+
+  .box:nth-child(5) {
+      background-color: #FFBD59;
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('/assets/gen-product-img/mobile.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(5) h2 a {
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+  }
+
+  .box:nth-child(6) {
+      background-color: #FFBD59;
+      // background-image: url('icon/banner.png');
+      height: 15em;
+      width: 30em;
+      border-radius: 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-image: url('/assets/gen-product-img/smart.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
+
+  .box:nth-child(6) h2 a {
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+  }
+
+}
+
+// .main .box:nth-child(1) h1 {
+//     font-size: 50px;
+//     color: white;
+// }
