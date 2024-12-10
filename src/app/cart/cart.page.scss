@@ -1,0 +1,251 @@
+.background{
+  background-color: white ;
+}
+// -------------------------BANNER--------------
+// .banner {
+//   background-color: #eca02d;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 12em;
+//   box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+//   background-image: url('/assets/gen-product-img/banner.png');
+//   background-size: cover;
+//   background-position: center;
+// }
+
+// .banner h1 {
+//   color: aqua;
+//   font-size: 90px;
+//   margin-left: 5px;
+//   color: transparent;
+//   -webkit-text-stroke-width: 2px;
+//   -webkit-text-stroke-color: white;
+//   font-family: "Inria Sans", sans-serif;
+//   font-weight: 700;
+//   font-style: Bolder;
+
+// }
+
+.image-panel{
+  background-color: yellow;
+  background-image: url('/assets/products/background.png');
+  background-size: cover;
+  background-position: center;
+  height: 19vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+ion-content{
+  --background: #EFEFEF;
+}
+
+
+.title{
+  font-size: 5em;
+  font-family: Inria Sans;
+  font-weight: bold;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+
+}
+
+// ------------------MAIN PRODUCTS ---------------
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 19vh);
+  width: 100%;
+  background-color: #EFEFEF;
+  box-shadow: 0px 4px 17.5px rgba(0, 0, 0);
+  gap: 40px;
+}
+
+.order-summary{
+  color: black;
+  font-family: Inria Sans;
+  font-weight: 1000;
+
+}
+
+.empty-cart{
+  font-size: 2em;
+  font-family: Inria Sans;
+}
+
+.cart-products{
+  width: 70vw;
+
+  display: flex;
+  justify-content: start;
+  align-content: start;
+  margin-top: 2em;
+  height: 100%;
+  flex-wrap: wrap;
+  overflow:auto;
+  gap: 20px;
+}
+
+.cart-divider{
+  background-color: black;
+  width: .2em;
+  height: 60vh;
+}
+
+.cart-details, .cart-details-modal{
+  width: 20vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-fee{
+  color: black;
+  font-family: Inria Sans;
+  display: flex;
+  gap: 4em;
+}
+
+.summary-divider{
+  background-color: black;
+  height: .2em;
+  width: 16em;
+}
+
+.total-summary{
+  margin-top: .5em;
+  color: black;
+  font-family: Inria Sans;
+  display: flex;
+  gap: 4em;
+  font-size: 1.5em;
+}
+
+
+.content{
+  display: flex;
+}
+
+.cart-details-btn{
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .product-card{
+    flex-direction: row;
+    width: 600px;
+    z-index: 5;
+    height: 10em;
+  }
+
+  .products-panels{
+    width: 90vw;
+}
+
+.product-image {
+  width: 40%;
+  height: 100%;
+
+}
+
+.product-description{
+  width: 60%;
+}
+
+.cart-divider{
+  display: none;
+}
+
+
+}
+
+
+
+
+@media (max-width: 1350px){
+.content{
+  flex-direction: column;
+  gap: 1em;
+}
+
+.cart-divider{
+  display: none;
+}
+
+.cart-details{
+  display: none;
+}
+
+.cart-details-btn{
+  display: block;
+}
+
+.stars{
+  display: none;
+}
+
+ion-header{
+  display: block;
+  --background-color: white;
+}
+ion-menu-button{
+  color: black;
+  display: block;
+  justify-content: flex-end;
+}
+.list-md{
+  background: white;
+}
+ion-list, ion-item, .burgir{
+  --background-color: white;
+  --background: white;
+}
+ion-toolbar{
+  --background-color: white;
+  --background: white;
+  box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+  height: 3em;
+}
+ion-title{
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+  color: black;
+  font-size: 18px;
+  margin: 0;
+}
+ion-title span{
+  margin-left: 5px;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: Bold;
+}
+
+
+
+
+}
+
+
+
+.cart-details-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cart-details-btn{
+  width: 80vw;
+  margin-bottom: 5em;
+}

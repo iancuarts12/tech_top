@@ -9,7 +9,7 @@
     <ul>
       <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
       <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
-      <li><a href="#cart">CART</a></li>
+      <li><a [routerLink]="['/cart']">CART</a></li>
     </ul>
   </div>
 </nav>
@@ -20,10 +20,10 @@
   <div id="container">
   <div class="banner">
     <img src="/assets/TECH_TOP_ICON.png" >
-    <p>GADGET WITHIN A BUDGET?</p>
-    <strong>WE GOT IT HERE.</strong>
+    <p>TECH TREASURES,</p>
+    <strong>TOP DEALS.</strong>
     </div>
-    <ion-button><a href="#products">Shop Now</a></ion-button>
+    <ion-button [routerLink]="['/product-general']">Shop Now</ion-button>
   </div>
   </div>
 

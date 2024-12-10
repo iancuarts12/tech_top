@@ -1,0 +1,85 @@
+<ion-content [fullscreen] = "true">
+  <nav class="nav-bar">
+    <div class="tech-top">
+      <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+    </div>
+
+    <div class="nav-items">
+      <ul>
+        <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
+        <li><a [routerLink]="['/cart']">CART</a></li>
+      </ul>
+    </div>
+  </nav>
+  <app-phone-nav></app-phone-nav>
+
+  <!-- Main Content Below -->
+
+  <div class="image-panel">
+    <div class="overlay"></div>
+    <p class="title">PRODUCTS</p>
+  </div>
+  <div class="content">
+    <div class="products-nav">
+      <div class="mobile-product-nav">
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="selectedProduct" aria-label="SELECT PRODUCT" interface="modal" placeholder="SELECT PRODUCT" (ionChange)="navigate($event)">
+            <ion-select-option value="laptops">LAPTOPS</ion-select-option>
+            <ion-select-option value="pc">PC</ion-select-option>
+            <ion-select-option value="consoles">CONSOLES</ion-select-option>
+            <ion-select-option value="peripherals">PERIPHERALS</ion-select-option>
+            <ion-select-option value="mobile">MOBILE DEVICES</ion-select-option>
+            <ion-select-option value="smart">SMART DEVICES</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+      <div class="product-tab" [routerLink]="['/product-laptop']">LAPTOPS</div>
+      <div class="product-tab" [routerLink]="['/product-pc']">PC</div>
+      <div class="product-tab" [routerLink]="['/product-consoles']">CONSOLES</div>
+      <div class="product-tab" [routerLink]="['/product-peripherals']">PERIPHERALS</div>
+      <div class="product-tab" [routerLink]="['/product-mobile']">MOBILE DEVICES</div>
+      <div class="product-tab active" [routerLink]="['/product-smart']">SMART DEVICES</div>
+    </div>
+
+  <div class="products-panels">
+    <div *ngFor="let product of products" class="product-card">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name" />
+      </div>
+      <div class="product-description">
+        <div class="top-row">
+          <span class="product-name">{{ product.name }}</span>
+          <span class="product-price">{{ product.price }}</span>
+        </div>
+        <div class="brand">{{ product.brand }}</div>
+        <ul class="specs">
+          <li *ngFor="let spec of product.specs">{{ spec }}</li>
+        </ul>
+        <div class="reviews-checkout">
+          <div class="reviews-info">
+            <div class="stars">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+            <a [href]="product.moreInfo" target="_blank" class="more-info">
+              MORE INFO
+            </a>
+          </div>
+          <ion-button size="small" (click)="btnClicked(product)">
+            {{ isProductInCart(product.id) ? 'REMOVE FROM CART' : 'ADD TO CART' }}
+            <ion-icon *ngIf="!isProductInCart(product.id)" name="cart"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+</ion-content>

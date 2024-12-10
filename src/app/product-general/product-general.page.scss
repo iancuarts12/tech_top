@@ -2,190 +2,176 @@
   background-color: white ;
 }
 // -------------------------BANNER--------------
-.banner {
-  background-color: #eca02d;
+// .banner {
+//   background-color: #eca02d;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 12em;
+//   box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+//   background-image: url('/assets/gen-product-img/banner.png');
+//   background-size: cover;
+//   background-position: center;
+// }
+
+// .banner h1 {
+//   color: aqua;
+//   font-size: 90px;
+//   margin-left: 5px;
+//   color: transparent;
+//   -webkit-text-stroke-width: 2px;
+//   -webkit-text-stroke-color: white;
+//   font-family: "Inria Sans", sans-serif;
+//   font-weight: 700;
+//   font-style: Bolder;
+
+// }
+
+.image-panel{
+  background-color: yellow;
+  background-image: url('/assets/products/background.png');
+  background-size: cover;
+  background-position: center;
+  height: 19vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12em;
-  box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
-  background-image: url('/assets/gen-product-img/banner.png');
-  background-size: cover;
-  background-position: center;
+
 }
 
-.banner h1 {
-  color: aqua;
-  font-size: 90px;
-  margin-left: 5px;
-  color: transparent;
-  -webkit-text-stroke-width: 2px;
+ion-content{
+  --background: #EFEFEF;
+}
+
+
+.title{
+  font-size: 5em;
+  font-family: Inria Sans;
+  font-weight: bold;
+  -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: white;
-  font-family: "Inria Sans", sans-serif;
-  font-weight: 700;
-  font-style: Bolder;
+  color: transparent;
 
 }
 
 // ------------------MAIN PRODUCTS ---------------
 
-.main {
-  padding: 0;
-  margin-top: 15px;
-
+.background{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  height: calc(100vh - 19vh);
+  width: 100%;
+  background-color: #EFEFEF;
+  box-shadow: 0px 4px 17.5px rgba(0, 0, 0);
+  overflow: scroll;
+}
 
-  display: grid;
-  grid-template-areas:
-      "box1 box2 box3"
-      "box4 box5 box6"
-  ;
+.main {
+  margin-bottom: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start ;
+
+  width: 90vw;
+
+}
+
+
+
+
+h2{
+  font-size: clamp(2.5rem, 3.5vw, 5rem);
+  text-align: center;
+  padding: 1em;
+  line-height: 1em;
+  font-weight: 1000;
+  text-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+  color: white;
+}
+
 
   .box {
-      box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50)
+      box-shadow: 0px 4px 7.5px rgba(0, 0, 0, .50);
+      background-color: #FFBD59;
+      height: 15em;
+      width: 24vw;
+      border-radius: 15px;
+
+      font-family: Inria Sans, Roboto, Arial;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+  }
+
+  .box h2 a{
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-family: Inria Sans;
+    line-height: 1em;
+
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.452);
   }
 
   .box:nth-child(1) {
-      background-color: #FFBD59;
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-      color: white;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: black;
-
       background-image: url('/assets/gen-product-img/Laptop.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
   }
 
-  .box:nth-child(1) h2 a {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: white;
-  }
 
   .box:nth-child(2) {
-      background-color: #FFBD59;
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       background-image: url('/assets/gen-product-img/PC.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-  }
-
-  .box:nth-child(2) h2 a {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: white;
   }
 
   .box:nth-child(3) {
-      background-color: #FFBD59;
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       background-image: url('/assets/gen-product-img/console.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-  }
-
-  .box:nth-child(3) h2 a {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: white;
   }
 
   .box:nth-child(4) {
-      background-color: #FFBD59;
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       background-image: url('/assets/gen-product-img/peripherals.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-  }
-
-  .box:nth-child(4) h2 a {
-      font-size: 2em;
-      font-weight: bold;
-      color: white;
   }
 
   .box:nth-child(5) {
-      background-color: #FFBD59;
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       background-image: url('/assets/gen-product-img/mobile.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-  }
-
-  .box:nth-child(5) h2 a {
-      font-size: 2em;
-      font-weight: bold;
-      color: white;
   }
 
   .box:nth-child(6) {
-      background-color: #FFBD59;
-      // background-image: url('icon/banner.png');
-      height: 15em;
-      width: 30em;
-      border-radius: 15px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       background-image: url('/assets/gen-product-img/smart.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
   }
 
-  .box:nth-child(6) h2 a {
-      font-size: 2em;
-      font-weight: bold;
-      color: white;
-  }
-
-}
 
 // .main .box:nth-child(1) h1 {
 //     font-size: 50px;
 //     color: white;
 // }
+@media (max-width: 1200px) {
+  .main {
+    margin-top: 10em;
+      gap: 20px;
+      flex-wrap: wrap; /* Ensures proper wrapping */
+  }
+  .box {
+      width: calc(80% / 2); /* Adjust to two items per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-top: 15em;
+      gap: 15px;
+  }
+  .box {
+      width: 90%; /* Single item per row */
+      height: auto; /* Let the height adapt */
+  }
+  h2 {
+      font-size: 2em; /* Smaller text for mobile */
+  }
+}
+

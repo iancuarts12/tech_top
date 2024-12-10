@@ -34,14 +34,15 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+
 
 
 // for nav bar
 
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-@media (max-width: 1600px) {
+@media (max-width: 100vw) {
   #container ion-button a{
     font-size: 20px;
     padding: 10%;
@@ -75,7 +76,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 670px) {
   .nav-bar{
     display: none !important;
   }
@@ -237,3 +238,120 @@
 .nav-items li a:hover:after{
   width: 100%;
 }
+
+
+
+.product-card {
+  width: 300px;
+  height: 19em;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Inria Sans;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product-image{
+  background-color: white;
+}
+
+.product-description {
+  padding: 10px;
+  background: #ececec;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 1em;
+  color: black;
+}
+
+.product-price {
+  color: black;
+
+}
+
+.brand {
+  font-size: 14px;
+  color: black;
+  margin: 0;
+}
+
+.specs {
+
+  padding: 0 1em;
+  margin: 5px 0 10px;
+}
+
+.specs li {
+  font-size: 13px;
+  color: #555;
+}
+
+.reviews-checkout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reviews-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 14px;
+}
+
+.more-info {
+  font-size: 13px;
+  color: #FFBD59;
+  text-decoration: none;
+
+}
+
+.more-info:hover {
+  text-decoration: underline;
+}
+
+ion-button{
+  --background: #FFBD59;
+  color: white;
+  font-family: Inria Sans;
+}
+
+ion-button ion-icon{
+  color: white;
+  margin-left: 1em;
+}
+
+
+
+
+

@@ -8,13 +8,13 @@
       <ul>
         <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
         <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
-        <li><a href="#cart">CART</a></li>
+        <li><a [routerLink]="['/cart']">CART</a></li>
       </ul>
     </div>
   </nav>
   <app-phone-nav></app-phone-nav>
 
-  <!-- Main Content Below-->
+  <!-- Main Content Below -->
 
   <div class="image-panel">
     <div class="overlay"></div>
@@ -36,30 +36,27 @@
         </ion-item>
       </ion-list>
     </div>
-      <div class="product-tab">LAPTOPS</div>
-      <div class="product-tab active">PC</div>
-      <div class="product-tab">CONSOLES</div>
-      <div class="product-tab">PERIPHERALS</div>
-      <div class="product-tab">MOBILE DEVICES</div>
-      <div class="product-tab">SMART DEVICES</div>
+    <div class="product-tab" [routerLink]="['/product-laptop']">LAPTOPS</div>
+    <div class="product-tab active" [routerLink]="['/product-pc']">PC</div>
+    <div class="product-tab" [routerLink]="['/product-consoles']">CONSOLES</div>
+    <div class="product-tab" [routerLink]="['/product-peripherals']">PERIPHERALS</div>
+    <div class="product-tab" [routerLink]="['/product-mobile']">MOBILE DEVICES</div>
+    <div class="product-tab" [routerLink]="['/product-smart']">SMART DEVICES</div>
     </div>
 
   <div class="products-panels">
-
-    <div class="product-card">
+    <div *ngFor="let product of products" class="product-card">
       <div class="product-image">
-        <img src="assets/products/pc1.jpg" alt="Cyborg Ryzen 5">
+        <img [src]="product.image" [alt]="product.name" />
       </div>
       <div class="product-description">
         <div class="top-row">
-          <span class="product-name">CYBORG RYZEN 5 </span>
-          <span class="product-price">₱60,599</span>
+          <span class="product-name">{{ product.name }}</span>
+          <span class="product-price">{{ product.price }}</span>
         </div>
-        <div class="brand">AMD</div>
+        <div class="brand">{{ product.brand }}</div>
         <ul class="specs">
-          <li>Ryzen 5 5600 G</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
+          <li *ngFor="let spec of product.specs">{{ spec }}</li>
         </ul>
         <div class="reviews-checkout">
           <div class="reviews-info">
@@ -70,255 +67,19 @@
               <ion-icon name="star"></ion-icon>
               <ion-icon name="star-half"></ion-icon>
             </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
+            <a [href]="product.moreInfo" target="_blank" class="more-info">
+              MORE INFO
+            </a>
           </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
+          <ion-button size="small" (click)="btnClicked(product)">
+            {{ isProductInCart(product.id) ? 'REMOVE FROM CART' : 'ADD TO CART' }}
+            <ion-icon *ngIf="!isProductInCart(product.id)" name="cart"></ion-icon>
           </ion-button>
         </div>
       </div>
     </div>
 
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc2.jpg" alt="Ice White Ryzen 6">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">ICE WHITE RYZEN 6</span>
-          <span class="product-price">₱55,999</span>
-        </div>
-        <div class="brand">AMD</div>
-        <ul class="specs">
-          <li>Ryzen 5 5600 G</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc3.jpg" alt="NZXT Ryzen 5">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">NZXT Ryzen 5</span>
-          <span class="product-price">₱55,999</span>
-        </div>
-        <div class="brand">AMD</div>
-        <ul class="specs">
-          <li>Ryzen 5 5600X | MSI RTX 1080 Ti</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc4.jpg" alt="Acer White Box">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">ACER WHITE BOX</span>
-          <span class="product-price">₱69,899</span>
-        </div>
-        <div class="brand">ACER</div>
-        <ul class="specs">
-          <li>Ryzen 7 5700 G | GeForce RTX 1080 Ti</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc5.jpg" alt="HYTE Y70">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">HYTE Y70</span>
-          <span class="product-price">₱119,999</span>
-        </div>
-        <div class="brand">HEXA</div>
-        <ul class="specs">
-          <li>GeForce RTX 4070 Ti</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc6.jpg" alt="Alpha Aurus Asus">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">ALPHA AURUS ASUS</span>
-          <span class="product-price">₱89,599</span>
-        </div>
-        <div class="brand">TUF</div>
-        <ul class="specs">
-          <li>Ryzen 7 5700 X | GeForce RTX 5060 Ti.</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc7.jpg" alt="Crystal Corrustion">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">CRYSTAL CORRUSTION</span>
-          <span class="product-price">₱49,999</span>
-        </div>
-        <div class="brand">CORSAIR</div>
-        <ul class="specs">
-          <li>Ryzen 5 5600 G | GeForce RTX 1080 Ti</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/pc8.jpg" alt="Acer TUF Purple G">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">ACER TUF PURPLE G</span>
-          <span class="product-price">₱49,999</span>
-        </div>
-        <div class="brand">ACER</div>
-        <ul class="specs">
-          <li>Ryzen 7 5700 G | MSI RTX 1080 Ti</li>
-          <li>16GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart" class="cart-icon"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
 
   </div>
   </div>
-
 </ion-content>

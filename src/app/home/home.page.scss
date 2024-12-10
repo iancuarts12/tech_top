@@ -4,12 +4,17 @@
   }
 }
 
+ion-content{
+  font-family: Inria Sans;
+}
 //page style
 //Button
 #container ion-button{
  --border-radius: 5px;
  --background: white;
- width: 20%;
+ color: black;
+ width: 10em;
+ height: 3em;
  font-family: "Inria Sans", sans-serif;
  font-weight: 700;
  font-style: bold;

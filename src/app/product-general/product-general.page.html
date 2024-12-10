@@ -8,36 +8,38 @@
     <ul>
       <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
       <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
-      <li><a href="#cart">CART</a></li>
+      <li><a [routerLink]="['/cart']">CART</a></li>
     </ul>
   </div>
 </nav>
 <app-phone-nav></app-phone-nav>
 
 <!--Main Contents Below-->
-<div class = "background">
-<div class="banner">
-  <h1>PRODUCTS</h1>
+
+  <div class="image-panel">
+  <div class="overlay"></div>
+  <p class="title">PRODUCTS</p>
 </div>
 
+<div class = "background">
 <div class="main">
-  <div class="box box1">
-    <h2 class="product-title"><a [routerLink]="['../product-laptop']" routerLinkActive="router-link-active">LAPTOPS</a></h2>
+  <div class="box box1" [routerLink]="['../product-laptop']">
+    <h2>LAPTOPS</h2>
   </div>
-  <div class="box box2">
-    <h2><a [routerLink]="['../product-pc']" routerLinkActive="router-link-active">PC</a></h2>
+  <div class="box box2" [routerLink]="['../product-pc']">
+    <h2>PC</h2>
   </div>
-  <div class="box box3">
-    <h2><a href="">CONSOLES</a></h2>
+  <div class="box box3" [routerLink]="['../product-consoles']">
+    <h2>CONSOLES</h2>
   </div>
-  <div class="box box4">
-    <h2><a href="">PERIPHERALS</a></h2>
+  <div class="box box4" [routerLink]="['../product-peripherals']">
+    <h2>PERIPHERALS</h2>
   </div>
-  <div class="box box5">
-    <h2><a href="">MOBILE DEVICES</a></h2>
+  <div class="box box5" [routerLink]="['../product-mobile']">
+    <h2>MOBILE DEVICES</h2>
   </div>
-  <div class="box box6">
-    <h2><a href="">SMART DEVICES</a></h2>
+  <div class="box box6" [routerLink]="['../product-smart']">
+    <h2>SMART DEVICES</h2>
   </div>
 </div>
 </div>

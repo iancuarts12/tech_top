@@ -8,7 +8,7 @@
       <ul>
         <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
         <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
-        <li><a href="#cart">CART</a></li>
+        <li><a [routerLink]="['/cart']">CART</a></li>
       </ul>
     </div>
   </nav>
@@ -30,36 +30,33 @@
             <ion-select-option value="pc">PC</ion-select-option>
             <ion-select-option value="consoles">CONSOLES</ion-select-option>
             <ion-select-option value="peripherals">PERIPHERALS</ion-select-option>
-            <ion-select-option value="mobile-devices">MOBILE DEVICES</ion-select-option>
+            <ion-select-option value="mobile">MOBILE DEVICES</ion-select-option>
             <ion-select-option value="smart-devices">SMART DEVICES</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>
     </div>
-      <div class="product-tab active">LAPTOPS</div>
-      <div class="product-tab">PC</div>
-      <div class="product-tab">CONSOLES</div>
-      <div class="product-tab">PERIPHERALS</div>
-      <div class="product-tab">MOBILE DEVICES</div>
-      <div class="product-tab">SMART DEVICES</div>
+      <div class="product-tab active" [routerLink]="['/product-laptop']">LAPTOPS</div>
+      <div class="product-tab" [routerLink]="['/product-pc']">PC</div>
+      <div class="product-tab" [routerLink]="['/product-consoles']">CONSOLES</div>
+      <div class="product-tab" [routerLink]="['/product-peripherals']">PERIPHERALS</div>
+      <div class="product-tab" [routerLink]="['/product-mobile']">MOBILE DEVICES</div>
+      <div class="product-tab" [routerLink]="['/product-smart']">SMART DEVICES</div>
     </div>
 
   <div class="products-panels">
-
-    <div class="product-card">
+    <div *ngFor="let product of products" class="product-card">
       <div class="product-image">
-        <img src="assets/products/laptop1.jpg" alt="Acer Nitro 5">
+        <img [src]="product.image" [alt]="product.name" />
       </div>
       <div class="product-description">
         <div class="top-row">
-          <span class="product-name">ACER NITRO 5</span>
-          <span class="product-price">₱49,999</span>
+          <span class="product-name">{{ product.name }}</span>
+          <span class="product-price">{{ product.price }}</span>
         </div>
-        <div class="brand">ACER</div>
+        <div class="brand">{{ product.brand }}</div>
         <ul class="specs">
-          <li>Intel® Core i5-12500H</li>
-          <li>8GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
+          <li *ngFor="let spec of product.specs">{{ spec }}</li>
         </ul>
         <div class="reviews-checkout">
           <div class="reviews-info">
@@ -70,253 +67,18 @@
               <ion-icon name="star"></ion-icon>
               <ion-icon name="star-half"></ion-icon>
             </div>
-            <a href="https://www.acer.com/ph-en/laptops/nitro/nitro-5" target="_blank" class="more-info">MORE INFO</a>
+            <a [href]="product.moreInfo" target="_blank" class="more-info">
+              MORE INFO
+            </a>
           </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
+          <ion-button size="small" (click)="btnClicked(product)">
+            {{ isProductInCart(product.id) ? 'REMOVE FROM CART' : 'ADD TO CART' }}
+            <ion-icon *ngIf="!isProductInCart(product.id)" name="cart"></ion-icon>
           </ion-button>
         </div>
       </div>
     </div>
 
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop2.jpg" alt="MSI GF63">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">MSI GF63</span>
-          <span class="product-price">₱45,999</span>
-        </div>
-        <div class="brand">MSI</div>
-        <ul class="specs">
-          <li>Intel i5 11400H CPU</li>
-          <li>16GB DDR4 RAM</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.msi.com/Laptop/GF63-Thin-9SX-GTX/Specification" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop3.jpg" alt="IdeaPad Gaming 3">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">IDEAPAD GAMING 3</span>
-          <span class="product-price">₱49,999</span>
-        </div>
-        <div class="brand">LENOVO</div>
-        <ul class="specs">
-          <li>Ryzen 6600H CPU</li>
-          <li>16GB DDR4 RAM</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.lenovo.com/us/en/p/laptops/ideapad/ideapad-gaming-laptops/gaming-3-gen-6-(15-amd)/wmd00000479" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop4.jpg" alt="Aspire 3">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">ASPIRE 3</span>
-          <span class="product-price">₱31,999</span>
-        </div>
-        <div class="brand">ACER</div>
-        <ul class="specs">
-          <li>Intel® Core™ i3-1115G4</li>
-          <li>8GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.acer.com/ph-en/laptops/aspire/aspire-3-intel" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop5.jpg" alt="IdeaPad Slim 3i">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">IDEAPAD SLIM 3I</span>
-          <span class="product-price">₱25,999</span>
-        </div>
-        <div class="brand">LENOVO</div>
-        <ul class="specs">
-          <li>Intel Core i3-1215U CPU</li>
-          <li>8GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.lenovo.com/ph/en/p/laptops/ideapad/ideapad-5/ideapad-slim-5i-gen-8-14-inch-intel/len101i0067" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop6.jpg" alt="MSI Modern 15">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">MSI MODERN 15</span>
-          <span class="product-price">₱34,999</span>
-        </div>
-        <div class="brand">MSI</div>
-        <ul class="specs">
-          <li>Ryzen 7530U</li>
-          <li>16GB DDR4 RAM</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.msi.com/Business-Productivity/Modern-15-B12X" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop7.jpg" alt="Vivobook 16">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">VIVOBOOK 16</span>
-          <span class="product-price">₱33,495</span>
-        </div>
-        <div class="brand">ASUS</div>
-        <ul class="specs">
-          <li>12th Gen Intel Core H-series CPU </li>
-          <li>Up to DDR5 32GB 4800MHz</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://www.asus.com/ph/laptops/for-home/vivobook/vivobook-16-x1605/" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-image">
-        <img src="assets/products/laptop8.jpg" alt="Matebook D15 5i">
-      </div>
-      <div class="product-description">
-        <div class="top-row">
-          <span class="product-name">MATEBOOK D15 5I</span>
-          <span class="product-price">₱31,999</span>
-        </div>
-        <div class="brand">HUAWEI</div>
-        <ul class="specs">
-          <li>10th Gen Intel Core i5-10210U processor</li>
-          <li>8GB DDR4 Memory</li>
-          <li>512GB NVMe SSD</li>
-        </ul>
-        <div class="reviews-checkout">
-          <div class="reviews-info">
-            <div class="stars">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-            </div>
-            <a href="https://consumer.huawei.com/en/laptops/matebook-d-15-2022/" target="_blank" class="more-info">MORE INFO</a>
-          </div>
-          <ion-button size="small">
-            ADD TO CART
-            <ion-icon name="cart" class="cart-icon"></ion-icon>
-          </ion-button>
-        </div>
-      </div>
-    </div>
 
   </div>
   </div>

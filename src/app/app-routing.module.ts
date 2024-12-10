@@ -29,6 +29,26 @@ const routes: Routes = [
     path: 'product-pc',
     loadChildren: () => import('./product-pc/product-pc.module').then( m => m.ProductPcPageModule)
   },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'product-mobile',
+    loadChildren: () => import('./product-mobile/product-mobile.module').then( m => m.ProductMobilePageModule)
+  },
+  {
+    path: 'product-peripherals',
+    loadChildren: () => import('./product-peripherals/product-peripherals.module').then( m => m.ProductPeripheralsPageModule)
+  },
+  {
+    path: 'product-consoles',
+    loadChildren: () => import('./product-consoles/product-consoles.module').then( m => m.ProductConsolesPageModule)
+  },
+  {
+    path: 'product-smart',
+    loadChildren: () => import('./product-smart/product-smart.module').then( m => m.ProductSmartPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,21 +1,35 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen] = "true">
+  <nav class="nav-bar">
+    <div class="tech-top">
+      <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+    </div>
 
-<nav class="nav-bar">
-  <div class="tech-top">
-    <P><a [routerLink]="['/home']" routerLinkActive="router-link-active">TECH<span>TOP</span></a></P>
+    <div class="nav-items">
+      <ul>
+        <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
+        <li><a [routerLink]="['/cart']">CART</a></li>
+      </ul>
+    </div>
+  </nav>
+  <app-phone-nav></app-phone-nav>
+
+  <!--Main Contents Below-->
+
+    <div class="image-panel">
+    <div class="overlay"></div>
+    <p class="title" style="text-align: center;">ABOUT US</p>
   </div>
 
-  <div class="nav-items">
-    <ul>
-      <li><a [routerLink]="['/product-general']" routerLinkActive="router-link-active">PRODUCTS</a></li>
-      <li><a [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT US</a></li>
-      <li><a href="#cart">CART</a></li>
-    </ul>
+  <div class = "background" >
+    <div><strong class="tech-top" style="font-size: 90px;">TECH <span>TOP</span></strong></div>
+    <div>
+      <p>Welcome to TechTop, your ultimate destination for high-quality tech
+        gadgets and hidden gems. We believe that great technology doesn’t always
+        mean the most well-known brands—sometimes, the best innovations are found
+        off the beaten path.</p>
+      <p>Our curated selection offers top-tier electronics, from cutting-edge laptops and powerful gaming gear to unique gadgets you won’t find anywhere else. At TechTop, we’re passionate about providing value, quality, and exceptional customer service, helping you discover the best tech to fit your lifestyle. Dive into our collection and find your next favorite gadget today!</p>
+    </div>
   </div>
-</nav>
-<app-phone-nav></app-phone-nav>
 
-<!--Main Contents Below-->
-
-
-</ion-content>
+  </ion-content>
